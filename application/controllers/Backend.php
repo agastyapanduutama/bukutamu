@@ -43,6 +43,8 @@ class Backend extends CI_Controller {
 
 	public function tambah_user()
 	{
+		$lokasi = $this->model_backend->index_lokasi();
+
 		$valid = $this->form_validation;
 		
 		$valid->set_rules('nama_user', 'user','required',
@@ -51,6 +53,7 @@ class Backend extends CI_Controller {
 		if ($valid->run()===FALSE) {
 		
 		$data = array('title'	=>  'user',
+					 'lokasi' 	=>  $lokasi,
 					 'isi'		=>	'backend/pengaturan/add');
 	
 		$this->load->view('backend/templates/wrapper', $data, FALSE);
@@ -61,7 +64,8 @@ class Backend extends CI_Controller {
 							'username'	=> $i->post('username'),
 							'password'	=> SHA1($i->post('password')),
 							'nama_user'	=> $i->post('nama_user'),
-							'level'		=> $i->post('level')
+							'level'		=> $i->post('level'),
+							'lokasi'	=> $i->post('lokasi')
 		);
 			$this->model_backend->tambah_user($data);
 			$this->session->set_flashdata('sukses', 'Data berhasil ditambahkan');

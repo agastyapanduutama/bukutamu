@@ -96,6 +96,15 @@ class Model_backend extends CI_Model {
 		return $query->result();
 	}
 
+	public function index_lokasi()
+		{
+			$this->db->select('*');
+			$this->db->from('lokasi_buku_tamu');
+			$this->db->order_by('id_lokasi', 'DESC');
+			$query = $this->db->get();
+			return $query->result();
+		}	
+
 	public function sub_wilayah($id_wilayah)
 	{
 		$this->db->select('*');

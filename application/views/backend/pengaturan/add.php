@@ -41,6 +41,17 @@ echo form_open(base_url('backend/tambah_user'), 'class="form-horizontal"');;
 	</div>
 </div>
 
+<div class="form-group" >
+	<label class="col-md-2 control-label">Level <span style="color: red">*</span></label>
+	<div class="col-md-5">
+		<select class="form-control" name="lokasi">
+			<?php foreach ($lokasi as $lok): ?>
+				<option value="<?= $lok->id_lokasi?>"><?= $lok->kepustakaan?></option>
+			<?php endforeach ?>
+		</select>
+	</div>
+</div>
+
 <div class="form-group col-md-12">
 	<div class="col-md-5">
 		<button class="btn btn-success btn-sm" type="submit">

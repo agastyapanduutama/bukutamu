@@ -18,11 +18,13 @@ class Aunt_login
 			$id_user 	= $check->id_user;
 			$nama_user	= $check->nama_user;
 			$level		= $check->level;
+			$lokasi		= $check->lokasi;
 			
 			$this->ci->session->set_userdata('id_user',$id_user);
 			$this->ci->session->set_userdata('nama_user',$nama_user);
 			$this->ci->session->set_userdata('username',$username);
 			$this->ci->session->set_userdata('level',$level);
+			$this->ci->session->set_userdata('lokasi',$lokasi);
 
 			redirect(base_url('backend/dashboard'),'refresh');
 		}else{
@@ -38,11 +40,13 @@ class Aunt_login
 			$id_user 	= $check->id_user;
 			$nama_user	= $check->nama_user;
 			$level		= $check->level;
+			$lokasi		= $check->lokasi;
 			
 			$this->ci->session->set_userdata('id_user',$id_user);
 			$this->ci->session->set_userdata('nama_user',$nama_user);
 			$this->ci->session->set_userdata('username',$username);
 			$this->ci->session->set_userdata('level',$level);
+			$this->ci->session->set_userdata('lokasi',$lokasi);
 		}
 	}
 
@@ -73,11 +77,13 @@ class Aunt_login
 			$id_user 	= $check->id_user;
 			$nama_user	= $check->nama_user;
 			$level		= $check->level;
+			$lokasi		= $check->lokasi;
 			
 			$this->ci->session->set_userdata('id_user',$id_user);
 			$this->ci->session->set_userdata('nama_user',$nama_user);
 			$this->ci->session->set_userdata('username',$username);
 			$this->ci->session->set_userdata('level',$level);
+			$this->ci->session->set_userdata('lokasi',$lokasi);
 
 			redirect(base_url('frontend/dashboard'),'refresh');
 		}else{
