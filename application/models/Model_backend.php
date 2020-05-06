@@ -210,6 +210,23 @@ class Model_backend extends CI_Model {
 
 	function report_filter()
 	{
+
+		if ($this->input->post('wilayah')!='all') {
+			$this->db->select('*');
+			if ($_POST['jenis']!='all') {
+				$this->db->from($this->input->post("jenis"));
+			}else{
+			$this->db->from('individu','rombongan');
+				}
+			$this->db->where('tanggal_kunjungan >=',$this->input->post('tgl_awal'));
+			$this->db->where('tanggal_kunjungan <=',$this->input->post('tgl_akhir'));
+				// if ($this->input->post('wilayah')!='all') {
+					$this->db->where('wilayah',$this->input->post('wilayah') );
+				// }
+			$query = $this->db->get();
+			return $query->result();
+		}
+
 		if ($this->input->post('jenis')==='all') {
 			$hasil=$this->db->query("
 			SELECT instansi,tanggal_kunjungan,nama_pengunjung,wilayah,sub_lokasi,no_kunjungan,jenis_kelamin,''AS pria,''AS wanita,pekerjaan,pendidikan_terakhir FROM individu WHERE `tanggal_kunjungan` >= '" . $this->input->post('tgl_awal') . "' AND `tanggal_kunjungan` <= '" . $this->input->post('tgl_akhir') . "'
@@ -218,17 +235,8 @@ class Model_backend extends CI_Model {
 			");
 			return $hasil->result();
 
-		// }elseif ($this->input->post('jenis')!='all') {
-		// 	$this->db->select('*');
-		// 	$this->db->from($this->input->post("jenis"));
-		// 	$this->db->where('tanggal_kunjungan >=',$this->input->post('tgl_awal'));
-		// 	$this->db->where('tanggal_kunjungan <=',$this->input->post('tgl_akhir'));
-		// 		if ($this->input->post('wilayah')!='all') {
-		// 			$this->db->where('wilayah',$this->input->post('wilayah') );
-		// 		}
-		// 	$query = $this->db->get();
-		// 	return $query->result();
 
+		
 		}elseif($this->input->post('jenis')!=='all'){
 			$this->db->select('*');
 			$this->db->from($this->input->post('jenis'));
