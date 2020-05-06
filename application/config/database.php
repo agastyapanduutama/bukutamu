@@ -9,7 +9,6 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
-	// 'password' => 'SAngkuriang404mariadb',
 	'database' => 'sibukutamu',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
