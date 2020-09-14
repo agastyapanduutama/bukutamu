@@ -27,6 +27,8 @@
             <th style="text-align: center; padding:2px;">WAKTU KUNJUNGAN</th>
             <th style="text-align: center; padding:2px;">NO ROMBONGAN</th>
             <th style="text-align: center; padding:2px;">KETUA ROMBONGAN</th>
+            <th style="text-align: center; padding:2px;">EMAIL</th>
+            <th style="text-align: center; padding:2px;">NO TELP</th>
             <th style="text-align: center; padding:2px;">ASAL INSTANSI</th>
             <th style="text-align: center; padding:2px;">JENIS LAYANAN</th>
         </tr>
@@ -44,6 +46,8 @@
 
 				</td>
 				<td style="text-align: center; padding:2px;"><?= $list->nama_ketua?></td>
+        <td style="text-align: center; padding:2px;"><?= $list->email?></td>
+        <td style="text-align: center; padding:2px;"><?= $list->no_telp?></td>
 				
 				<td style="text-align: center; padding:2px;"><?= $list->alamat_instansi?></td>
 			

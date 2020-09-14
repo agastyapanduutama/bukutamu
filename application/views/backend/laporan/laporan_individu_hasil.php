@@ -27,6 +27,8 @@
             <th style="text-align: center; padding:2px;">WAKTU KUNJUNGAN</th>
             <th style="text-align: center; padding:2px;">NO KUNJUNGAN</th>
             <th style="text-align: center; padding:2px;">NAMA</th>
+            <th style="text-align: center; padding:2px;">EMAIL</th>
+            <th style="text-align: center; padding:2px;">NO TELP</th>
             <th style="text-align: center; padding:2px;">JENIS KELAMIN</th>
             <th style="text-align: center; padding:2px;">PEDIDIKAN</th>
             <th style="text-align: center; padding:2px;">PEKERJAAN</th>
@@ -48,6 +50,8 @@
 
 				</td>
 				<td style="text-align: center; padding:2px;"><?= $list->nama_pengunjung?></td>
+		        <td style="text-align: center; padding:2px;"><?= $list->email_indi?></td>
+		        <td style="text-align: center; padding:2px;"><?= $list->no_telp_indi?></td>
 				<td style="text-align: center; padding:2px;">
 					<?php if ($list->jenis_kelamin==='0') {
 						echo "Perempuan";

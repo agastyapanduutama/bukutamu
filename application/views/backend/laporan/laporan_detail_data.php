@@ -56,7 +56,7 @@
 
 <table border="1">
        
-       	<thead>
+		       	<thead>
 					<tr>
 						<th style="text-align: center; padding:2px;">No</th>
 						<th style="text-align: center; padding:2px;">Tanggal Kunjungan</th>
@@ -64,9 +64,9 @@
 						<th style="text-align: center; padding:2px;">No Pengunjung</th>
 						<th style="text-align: center; padding:2px;">Instansi</th>
 						<th style="text-align: center; padding:2px;">Nama</th>
-						<th style="text-align: center; padding:2px;">Jenis Kelamin</th>
-						<th style="text-align: center; padding:2px;">No Telp</th>
 						<th style="text-align: center; padding:2px;">Email</th>
+						<th style="text-align: center; padding:2px;">No Telp</th>
+						<th style="text-align: center; padding:2px;">Jenis Kelamin</th>	
 						<th style="text-align: center; padding:2px;">Pekerjaan</th>
 						<th style="text-align: center; padding:2px;">Penddikan</th>
 					</tr>
@@ -138,6 +138,18 @@
 						echo $list->nama_pengunjung;	
 					} ?>
 				</td>
+
+				<?php if ($_POST['jenis'] == 'individu'): ?>
+					<td  style="text-align: center; padding:2px;"><?= $list->email_indi?></td>
+					<td  style="text-align: center; padding:2px;"><?= $list->no_telp_indi?></td>
+				<?php endif ?>
+
+				<?php if ($_POST['jenis'] == 'rombongan'): ?>
+					<td  style="text-align: center; padding:2px;"><?= $list->email?></td>
+					<td  style="text-align: center; padding:2px;"><?= $list->no_telp?></td>
+				<?php endif ?>
+				
+
 				<td style="text-align: center; padding:2px;">
 
 					<?php 
@@ -178,8 +190,6 @@
 
 					 ?>
 				</td>
-				<td  style="text-align: center; padding:2px;"><?= $list->email?></td>
-				<td  style="text-align: center; padding:2px;"><?= $list->no_telp?></td>
 				<?php if ($_POST['jenis']!='rombongan'){ ?>
 				<td style="text-align: center; padding:2px;"><?= $list->pekerjaan?></td>
 				<td style="text-align: center; padding:2px;"><?= $list->pendidikan_terakhir?></td>

@@ -79,9 +79,9 @@ class Frontend extends CI_Controller {
 				'wilayah'				=> $i->post('wilayah'),
 				'jenis_layanan'			=> $i->post('jenis_layanan'),
 				'no_kunjungan'			=> $i->post('no_kunjungan'),
-				'sub_lokasi'			=> $i->post('sub_lokasi')
-				'email'			=> $i->post('email')
-				'no_telp'			=> $i->post('no_telp')
+				'sub_lokasi'			=> $i->post('sub_lokasi'),
+				'email_indi'			=> $i->post('email_indi'),
+				'no_telp_indi'			=> $i->post('no_telp_indi'),
 		);
 			$this->model_frontend->tambah_individu($data);
 			$this->session->set_flashdata('success', 'Data berhasil disimpan');
@@ -137,9 +137,9 @@ class Frontend extends CI_Controller {
 				'wilayah'			=> $i->post('wilayah'),
 				'jenis_layanan'		=> $i->post('jenis_layanan'),
 				'no_kunjungan'		=> $i->post('no_kunjungan'),
-				'sub_lokasi'		=> $i->post('sub_lokasi')
-				'email'		=> $i->post('email')
-				'no_telp'		=> $i->post('sub_lokasi')
+				'sub_lokasi'		=> $i->post('sub_lokasi'),
+				'email'				=> $i->post('email'),
+				'no_telp'			=> $i->post('sub_lokasi'),
 		);
 			$this->model_frontend->tambah_rombongan($data);
 			$this->session->set_flashdata('success', 'Data berhasil disimpan');
@@ -151,10 +151,11 @@ class Frontend extends CI_Controller {
 	{
 		$id = $this->input->post('id_lokasi');
 		$query = $this->db->query('SELECT sub_lokasi.id_lokasi,
-										  sub_lokasi.id_sub_lokasi,
-										  sub_lokasi.nama_sub_lokasi
-								   			FROM sub_lokasi 
-								   				WHERE sub_lokasi.id_lokasi = ? ',array($id));
+									sub_lokasi.id_sub_lokasi,
+									sub_lokasi.nama_sub_lokasi
+								   	FROM sub_lokasi  
+								   	WHERE sub_lokasi.id_lokasi = ? ORDER BY nama_sub_lokasi DESC',array($id));
+		// echo $this->db->last_query();;
 		$result = array();
 
 		if( $query->num_rows() > 0 )

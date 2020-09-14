@@ -28,6 +28,8 @@
             <th style="text-align: center; padding:2px;">TANGGAL KUNJUNGAN</th>
             <th style="text-align: center; padding:2px;">NO KUNJUNGAN</th>
             <th style="text-align: center; padding:2px;">NAMA KETUA ROMBONGAN</th>
+            <th style="text-align: center; padding:2px;">EMAIL</th>
+            <th style="text-align: center; padding:2px;">NO TELP</th>
             <th style="text-align: center; padding:2px;">ASAL INSTANSI</th>
             <th style="text-align: center; padding:2px;">JUMLAH PERSONIL</th>
             <th style="text-align: center; padding:2px;">LOKASI PUSTAKA</th>
@@ -46,6 +48,8 @@
 
 				</td>
 				<td style="text-align: center; padding:2px;"><?= $list->nama_ketua?></td>
+				<td style="text-align: center; padding:2px;"><?= $list->email?></td>
+				<td style="text-align: center; padding:2px;"><?= $list->no_telp?></td>
 				<td style="text-align: center; padding:2px;"><?= $list->nama_instansi?></td>
 				<td style="text-align: center; padding:2px;"><?= $list->jumlah_personil_instansi?></td>
 			

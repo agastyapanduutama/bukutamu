@@ -48,14 +48,14 @@
                 <div class="form-group row">
                     <label class="col-md-3 control-label"><span style="color: red">* </span>No Handphone/Kontak</label>
                     <div class="col-md-5">
-                        <input type="text" class="form-control" required name="no_telp" placeholder="No Handphone/Kontak">
+                        <input type="text" class="form-control" required name="no_telp_indi" placeholder="No Handphone/Kontak">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-md-3 control-label"><span style="color: red">* </span>Email</label>
                     <div class="col-md-5">
-                        <input type="text" class="form-control" required name="email" placeholder="Email">
+                        <input type="text" class="form-control" required name="email_indi" placeholder="Email">
                     </div>
                 </div>
 
